@@ -1,0 +1,16 @@
+---
+name: Entrypoint
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - "main"
+
+jobs:
+  echo-git:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo git env vars
+        run: |
+          env | grep GIT
