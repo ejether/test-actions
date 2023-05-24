@@ -9,9 +9,9 @@ on:
         default: './aws/labs-non-prod'
         type: environment
       verb:
-        description: 'Path to Run `terragrunt run-all apply` from'
+        description: 'Terragrunt Verb'
         default: plan
-        type: environment
+        type: choice
         required: true
         options:
           - plan
