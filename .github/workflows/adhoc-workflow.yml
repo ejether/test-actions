@@ -9,8 +9,7 @@ on:
     inputs:
       path:
         description: 'Path to Run `terragrunt run-all apply` from'
-        #required: true
-        type: environment
+        type: string
       verb:
         description: 'Terragrunt Verb'
         default: plan
@@ -19,19 +18,6 @@ on:
         options:
           - plan
           - apply
-      name:
-        type: choice
-        description: Who to greet
-        options:
-          - monalisa
-          - cschleiden
-      message:
-        required: true
-      use-emoji:
-        type: boolean
-        description: Include 🎉🤣 emojis
-      environment:
-        type: environment
 
 permissions:
   contents: read
