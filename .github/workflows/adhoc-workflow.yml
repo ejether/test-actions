@@ -5,7 +5,7 @@ on:
     inputs:
       path:
         description: 'Path to Run `terragrunt run-all apply` from'
-        required: true
+        #required: true
         type: environment
       verb:
         description: 'Terragrunt Verb'
@@ -15,10 +15,19 @@ on:
         options:
           - plan
           - apply
-      environment:
-        description: 'Environment to run tests against'
-        type: environment
+      name:
+        type: choice
+        description: Who to greet
+        options:
+          - monalisa
+          - cschleiden
+      message:
         required: true
+      use-emoji:
+        type: boolean
+        description: Include 🎉🤣 emojis
+      environment:
+        type: environment
 
 permissions:
   contents: read
