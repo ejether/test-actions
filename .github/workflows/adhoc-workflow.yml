@@ -1,0 +1,32 @@
+---
+name: AWS Terragrunt Ad Hoc Action
+on:
+  workflow_dispatch:
+    inputs:
+      path:
+        description: 'Path to Run `terragrunt run-all apply` from'
+        required: true
+        default: './aws/labs-non-prod'
+        type: environment
+      verb:
+        description: 'Path to Run `terragrunt run-all apply` from'
+        default: plan
+        type: environment
+        required: true
+        options:
+          - plan
+          - apply
+
+permissions:
+  contents: read
+  checks: write
+  statuses: write
+  pull-requests: write
+  id-token: write   # This is required for requesting the JWT
+
+jobs:
+  echo foo:
+    name: echo foo
+    run: |
+      echo foo
+      echo Verb: $VERB
