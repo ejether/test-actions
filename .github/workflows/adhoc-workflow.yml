@@ -1,5 +1,9 @@
 ---
 name: AWS Terragrunt Ad Hoc Action
+
+env:
+  DAY_OF_WEEK: Monday
+
 on:
   workflow_dispatch:
     inputs:
