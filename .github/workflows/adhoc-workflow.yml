@@ -27,6 +27,12 @@ permissions:
 jobs:
   echo foo:
     name: echo foo
-    run: |
-      echo foo
-      echo Verb: $VERB
+
+    steps:
+      - name: echo git env vars
+        run: |
+          env | grep -i git
+      - name: foo
+        run: |
+          echo foo
+          echo Verb: $VERB
