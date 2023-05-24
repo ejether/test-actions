@@ -6,7 +6,6 @@ on:
       path:
         description: 'Path to Run `terragrunt run-all apply` from'
         required: true
-        default: './aws/labs-non-prod'
         type: environment
       verb:
         description: 'Terragrunt Verb'
@@ -16,6 +15,10 @@ on:
         options:
           - plan
           - apply
+      environment:
+        description: 'Environment to run tests against'
+        type: environment
+        required: true
 
 permissions:
   contents: read
